@@ -32,7 +32,7 @@ Insurtech CRM is a simple yet functional web-based CRM system tailored for the i
 
 1. Clone the repo:
     ```
-    git clone https://github.com/username/Insurtech_CRM.git
+    git clone https://github.com/mustafabilghn/Insurtech_CRM.git
     cd Insurtech_CRM
     ```
 
