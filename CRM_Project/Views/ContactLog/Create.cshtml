@@ -1,0 +1,39 @@
+﻿@model CRM_Project.Models.ContactLog
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Yeni Kayıt Ekle</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CustomerId" class="control-label">Müşteri</label>
+                <select asp-for="CustomerId" class="form-control" asp-items="ViewBag.Customers"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContactDate" class="control-label">İletişim Tarihi</label>
+                <input asp-for="ContactDate" class="form-control" />
+                <span asp-validation-for="ContactDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContactMethod" class="control-label">İletişim Yöntemi</label>
+                <input asp-for="ContactMethod" class="form-control" />
+                <span asp-validation-for="ContactMethod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Note" class="control-label">Notlar</label>
+                <input asp-for="Note" class="form-control" />
+                <span asp-validation-for="Note" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Ekle" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">İptal</a>
+            </div>
+        </form>
+    </div>
+</div>
+

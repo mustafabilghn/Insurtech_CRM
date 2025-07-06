@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    var lastCustomer = ViewBag.LastCustomer as CRM_Project.Models.Customer;
+    var logs = ViewBag.RecentLogs as List<CRM_Project.Models.ContactLog> ?? new();
+}
+
+<h1>Dashboard</h1>
+<hr />
+<div class="row">
+    <div class="col-md-3">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Toplam Müşteri</h5>
+                <p class="card-text fs-3">@ViewBag.CustomerCount</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-3">
+    <div class="card text-white bg-success mb-3">
+        <div class="card-body">
+            <h5 class="card-title">Toplam Poliçe</h5>
+            <p class="card-text fs-3">@ViewBag.PolicyCount</p>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">Son Eklenen Müşteri</h5>
+            @if (lastCustomer != null)
+            {
+                <p><strong>Ad:</strong> @lastCustomer.FullName</p>
+                <p><strong>Email:</strong> @lastCustomer.Email</p>
+                <p><strong>Tarih:</strong> @lastCustomer.CreationTime.ToString("dd.MM.yyyy HH.mm")</p>
+            }
+            else
+            {
+                <p>Henüz müşteri eklenmemiş.</p>
+            }
+        </div>
+    </div>
+</div>
+<h4>Son İletişim Kayıtları</h4>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Müşteri</th>
+            <th>İletişim Yöntemi</th>
+            <th>İletişim Tarihi</th>
+            <th>Notlar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var log in logs)
+        {
+            <tr>
+                <td>@log.Customer?.FullName</td>
+                <td>@log.ContactMethod</td>
+                <td>@log.ContactDate.ToString("dd.MM.yyyy HH:mm")</td>
+                <td>@log.Note</td>
+            </tr>
+        }
+    </tbody>
+</table>

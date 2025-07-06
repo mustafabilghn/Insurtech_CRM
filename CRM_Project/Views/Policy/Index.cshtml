@@ -1,0 +1,36 @@
+﻿@model IEnumerable<CRM_Project.Models.Policy>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Poliçeler</h1>
+<hr />
+<table class="table">
+    <thead>
+        <tr>
+            <th>Poliçe Numarası</th>
+            <th>Müşteri Adı</th>
+            <th>Sigorta Türü</th>
+            <th>Başlangıç Tarihi</th>
+            <th>Bitiş Tarihi</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var policy in Model)
+        {
+            <tr>
+                <td>@policy.PolicyNumber</td>
+                <td>@policy.Customer.FullName</td>
+                <td>@policy.Type</td>
+                <td>@policy.StartDate.ToString("dd.MM.yyyy")</td>
+                <td>@policy.EndDate.ToString("dd.MM.yyyy")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@policy.Id" class="btn btn-warning">Düzenle</a>
+                    <a asp-action="Delete" asp-route-id="@policy.Id" class="btn btn-danger">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Create" class="btn btn-primary">Yeni Poliçe Ekle</a>
