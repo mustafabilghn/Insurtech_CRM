@@ -4,11 +4,11 @@ Insurtech CRM is a simple yet functional web-based CRM system tailored for the i
 
 ## 📷 Screenshots
 
-[!Login](CRM_Project/screenshots/LoginPage.png)
-[!Customers](CRM_Project/screenshots/Customers.png)
-[!Policies](CRM_Project/screenshots/Policies.png)
-[!Contact Logs](CRM_Project/screenshots/Contacts.png)
-[!Dashboard](CRM_Project/screenshots/Dashboard.png)
+![Login](CRM_Project/screenshots/LoginPage.png)
+![Customers](CRM_Project/screenshots/Customers.png)
+![Policies](CRM_Project/screenshots/Policies.png)
+![Contact Logs](CRM_Project/screenshots/Contacts.png)
+![Dashboard](CRM_Project/screenshots/Dashboard.png)
 
 ## 🎯 Features
 
