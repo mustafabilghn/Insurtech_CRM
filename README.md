@@ -22,7 +22,7 @@ Insurtech CRM is a simple yet functional web-based CRM system tailored for the i
 
 ## 🛠️ Tech Stack
 
-- ASP.NET Core MVC (.NET 8)
+- ASP.NET Core MVC (.NET 9)
 - Entity Framework Core
 - SQL Server
 - Bootstrap 5
